@@ -202,105 +202,98 @@ img {
   }
 }
 
-
-
-
 /* Botón hamburguesa (solo móvil) */
 .menu-toggle {
-  display: none;
-  position: fixed;
-  top: 700px;
-  /* 👈 lo movemos arriba */
-  left: 20px;
-  /* 👈 20px del borde izquierdo */
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 2000;
-  width: 55px;
-  height: 55px;
+    display: none;
+    /* oculto en desktop */
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    background: transparent;
+    /* sin fondo */
+    border: none;
+    cursor: pointer;
+    z-index: 2000;
+    padding: 0;
+    width: 60px;
+    height: 60px;
 }
 
 /* Imagen dentro del botón */
 .menu-toggle img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: none;
-  /* evita que la imagen bloquee el click */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    /* evita que la imagen bloquee el click */
 }
 
 /* Menú móvil (barra oculta al inicio) */
 .mobile-nav {
-  display: none;
-  /* oculto en desktop */
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.825);
-  transform: translateY(100%);
-  transition: transform 0.4s ease-in-out;
-  z-index: 1500;
-  padding: 20px 0;
-  text-align: center;
+    display: none;
+    /* oculto en desktop */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.825);
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 1500;
+    padding: 20px 0;
+    text-align: center;
 }
 
 .mobile-nav.active {
-  transform: translateY(0);
-  /* desliza hacia arriba */
+    transform: translateY(0);
+    /* desliza hacia arriba */
 }
 
 .mobile-nav .nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  /* separación general entre botones */
-  padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* separación general entre botones */
+    padding-left: 0px;
 
-  /* desplazamiento desde el borde izquierdo */
-  align-items: flex-start;
-  /* alinea todos los botones a la izquierda */
+    /* desplazamiento desde el borde izquierdo */
+    align-items: flex-start;
+    /* alinea todos los botones a la izquierda */
 }
 
 /* Reducir espacio arriba del primer botón y abajo del último */
 .mobile-nav .nav-links li:first-child {
-  margin-top: 5px;
-  /* reduce espacio superior */
+    margin-top: 5px;
+    /* reduce espacio superior */
 }
 
 .mobile-nav .nav-links li:last-child {
-  margin-bottom: 5px;
-  /* reduce espacio inferior */
+    margin-bottom: 5px;
+    /* reduce espacio inferior */
 }
 
 /* Ajuste general para los botones */
 .mobile-nav .nav-links a img {
-  width: 50px;
-  height: 50px;
-  margin: 20px -100px -150px;
+    width: 50px;
+    height: 50px;
+    margin: 20px -100px -150px;
 }
-
-
 
 /* 🔥 Solo mostrar en pantallas chicas */
-@media (max-width: 390px) {
-  .sidebar {
-    display: none;
-  }
+@media (max-width: 500px) {
+    .sidebar {
+        display: none;
+    }
 
-  .sidebar .nav-links li {
-    display: block;
-  }
+    /* oculta sidebar fija */
+    .menu-toggle {
+        display: block;
+    }
 
-  /* oculta sidebar fija */
-  .menu-toggle {
-    display: block;
-  }
-
-  .mobile-nav {
-    display: block;
-  }
+    .mobile-nav {
+        display: block;
+    }
 }
+
 
